@@ -1,0 +1,5 @@
+{
+    "yaml.settings": {
+        "kubernetes": "pod-definition.yaml"
+    }
+}
