@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PlatformService.AsyncDataServices;
 using PlatformService.Data;
 using PlatformService.SyncDataServices.Http;
 
@@ -22,6 +23,7 @@ if(builder.Environment.IsProduction())
 builder.Services.AddScoped<IPlatformRepo,PlatformRepo>();
 
 builder.Services.AddHttpClient<ICommandDataClient,HttpCommandDataClient>();
+builder.Services.AddSingleton<IMessageBusClient,MessageBusClient>();
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
